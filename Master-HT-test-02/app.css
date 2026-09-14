@@ -1,0 +1,45 @@
+/* Shared chrome for every screen. Page-specific rules stay in each page. */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:#111827;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ color:#0B131A;display:flex;align-items:center;justify-content:center;padding:12px;-webkit-font-smoothing:antialiased}
+.device{width:375px;height:812px;background:var(--screen,#fff);border-radius:36px;overflow:hidden;
+ position:relative;display:flex;flex-direction:column;box-shadow:0 16px 32px rgba(0,0,0,.2)}
+@media (max-width:420px),(max-height:860px){
+ body{padding:0;background:var(--screen,#fff);align-items:stretch}
+ .device{width:100%;height:100dvh;border-radius:0;box-shadow:none}
+}
+.nav{flex:0 0 98px;height:98px;position:relative;background:var(--nav,#fff)}
+.sys{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;justify-content:space-between;padding:15px 16px 0 40px}
+.time{font-size:18px;font-weight:700;line-height:28px;color:#000}
+.icons{display:flex;align-items:center;gap:4px}
+.island{position:absolute;left:50%;margin-left:-62.5px;top:10px;width:125px;height:37px;border-radius:32px;background:#000}
+.titlerow{position:absolute;left:0;right:0;top:62px;display:flex;align-items:center;padding:0 40px}
+.navtitle{flex:1;margin:0;font-size:18px;font-weight:600;line-height:1.2;letter-spacing:-.18px;color:#121C25;text-align:center}
+.back{position:absolute;left:8px;top:2px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+ background:none;border:0;padding:0;cursor:pointer}
+.content{flex:1;display:flex;flex-direction:column;padding:16px 24px 0;overflow-y:auto;min-height:0}
+.content.flush{padding:0}
+.bottom{flex:0 0 auto;padding:0 24px 16px}
+.spacer{flex:1}
+.h1{font-size:28px;font-weight:700;letter-spacing:-.5px;margin:0}
+.h2{font-size:24px;font-weight:600;margin:0}
+.h3{font-size:18px;font-weight:600;margin:0}
+.p1{font-size:16px;line-height:24px;color:#121C25;margin:0}
+.p2{font-size:14px;line-height:20px;color:#4A545E;margin:0}
+.center{text-align:center}
+.mt4{margin-top:4px}.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}.mt24{margin-top:24px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;height:56px;border-radius:28px;background:#ED4D33;
+ color:#fff;font-family:inherit;font-size:16px;font-weight:600;line-height:1;text-decoration:none;border:0;cursor:pointer;padding:0}
+.btn.secondary{background:#fff;color:#ED4D33;border:1px solid #ED4D33}
+.btn.ghost{background:transparent;color:#ED4D33;height:44px}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.chartrow{display:flex}
+.ylab{width:64px;display:flex;flex-direction:column;justify-content:space-between;padding:8px 0}
+.band{font-size:12px;line-height:16px;color:#121C25}
+.bandsub{font-size:10px;line-height:14px;color:#9AA1A7}
+.xlab{display:flex;justify-content:space-between;margin-top:6px}
+.xlab .p2{font-size:12px}
+.xlab.pad{padding-left:64px}
+.chart{display:block;flex:1;min-width:0}
+[data-ear][hidden]{display:none}
