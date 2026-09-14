@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hearing test results</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="app.css">
+<style>:root{--screen:#FFFFFF;--nav:#FFFFFF}</style>
+<style>.head{padding:16px 24px 0}.mt2{margin-top:2px}.caps{display:flex;gap:12px;padding:0 24px;margin-top:20px}.cap{flex:1;background:#F2F4F5;border-radius:20px;padding:18px}.pct{font-size:30px;font-weight:700;color:#0B131A;margin:12px 0 0}.captrack{height:6px;border-radius:3px;background:#DDE0E3;margin-top:10px;overflow:hidden}.capfill{height:6px;border-radius:3px}.chartsec{background:#F7F7F8;margin-top:24px;padding:20px 16px}.chips{display:flex;gap:8px}.chip{display:flex;align-items:center;gap:8px;border:1px solid #E4E7E9;border-radius:20px;padding:8px 14px;background:#fff;opacity:.45;font-family:inherit;font-size:14px;font-weight:500;color:#0B131A;cursor:pointer}.chip.on{border-color:#F5C4BB;background:#FDEDEB;opacity:1}.cdot{width:8px;height:8px;border-radius:4px}.morerow{display:flex;align-items:center;gap:12px;background:#fff;border-radius:28px;padding:18px;margin-top:24px;text-decoration:none;color:inherit}.icirc{width:22px;height:22px;border-radius:11px;border:1.5px solid #0B131A;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.chev{font-size:18px}</style></head>
+<body>
+<main class="device">
+<div class="content flush"><div class="head"><h1 class="h1">Hearing test results</h1><p class="p2 mt4">Last test: <span id="date">—</span></p></div><div class="caps"><div class="cap"><h2 class="h3">Left</h2><p class="p2 mt2">hearing capacity</p><p class="pct">64%</p><div class="captrack"><div class="capfill" style="width:64%;background:#5857E5"></div></div></div><div class="cap"><h2 class="h3">Right</h2><p class="p2 mt2">hearing capacity</p><p class="pct">50%</p><div class="captrack"><div class="capfill" style="width:50%;background:#121C25"></div></div></div></div><section class="chartsec"><div class="chips"><button class="chip on" data-ear="left"><span class="cdot" style="background:#5857E5"></span>Left ear</button><button class="chip on" data-ear="right"><span class="cdot" style="background:#0B131A"></span>Right ear</button></div><div class="mt16"><div><div class="chartrow"><div class="ylab" style="height:300px"><div><div class="band">Excellent</div><div class="bandsub">0-20dB</div></div><div><div class="band">Good</div><div class="bandsub">20-40dB</div></div><div><div class="band">Low</div><div class="bandsub">40-60dB</div></div></div><svg class="chart" width="100%" height="300" viewBox="0 0 320 300" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g300L" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5857E5" stop-opacity=".25"/><stop offset="1" stop-color="#5857E5" stop-opacity=".02"/></linearGradient><linearGradient id="g300R" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B131A" stop-opacity=".2"/><stop offset="1" stop-color="#0B131A" stop-opacity=".02"/></linearGradient></defs><line x1="0" y1="99" x2="320" y2="99" stroke="#E4E7E9"/><line x1="0" y1="198" x2="320" y2="198" stroke="#E4E7E9"/><line x1="64" y1="0" x2="64" y2="300" stroke="#E4E7E9" stroke-dasharray="3 5"/><line x1="128" y1="0" x2="128" y2="300" stroke="#E4E7E9" stroke-dasharray="3 5"/><line x1="192" y1="0" x2="192" y2="300" stroke="#E4E7E9" stroke-dasharray="3 5"/><line x1="256" y1="0" x2="256" y2="300" stroke="#E4E7E9" stroke-dasharray="3 5"/><g data-ear="right"><path d="M 0.0 194.2 L 64.0 183.1 L 128.0 161.0 L 192.0 139.0 L 256.0 125.2 L 320.0 92.0 L 320 300 L 0 300 Z" fill="url(#g300R)"/><path d="M 0.0 194.2 L 64.0 183.1 L 128.0 161.0 L 192.0 139.0 L 256.0 125.2 L 320.0 92.0" stroke="#0B131A" stroke-width="2.5" fill="none"/></g><g data-ear="left"><path d="M 0.0 56.2 L 64.0 64.4 L 128.0 94.8 L 192.0 122.4 L 256.0 127.9 L 320.0 208.0 L 320 300 L 0 300 Z" fill="url(#g300L)"/><path d="M 0.0 56.2 L 64.0 64.4 L 128.0 94.8 L 192.0 122.4 L 256.0 127.9 L 320.0 208.0" stroke="#5857E5" stroke-width="2.5" fill="none"/></g></svg></div><div class="xlab pad"><span class="p2">Low tones</span><span class="p2">Mid tones</span><span class="p2">High tones</span></div></div></div><a class="morerow" href="./more-info.html"><span class="icirc">i</span><span class="p1" style="flex:1">More about hearing test</span><span class="chev">›</span></a></section></div><div class="bottom"><a class="btn" href="./profile-a.html">Done</a></div>
+</main>
+<script>
+
+try{var d=sessionStorage.getItem('ht.date');if(d)document.getElementById('date').textContent=d;}catch(e){}
+document.querySelectorAll('.chip').forEach(function(chip){
+  chip.addEventListener('click',function(){
+    var on=chip.classList.toggle('on');
+    document.querySelectorAll('[data-ear="'+chip.dataset.ear+'"]').forEach(function(g){
+      if(g.tagName.toLowerCase()==='g')g.hidden=!on;});});});
+
+</script>
+</body>
+</html>
